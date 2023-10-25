@@ -14,8 +14,8 @@ import appStyles from "../../App.module.css";
 import Asset from "../../components/Asset";
 import Note from "./Note";
 
-import Comment from "../comments/Comment";
-import CommentCreateForm from "../comments/CommentCreateForm";
+// import Comment from "../comments/Comment";
+// import CommentCreateForm from "../comments/CommentCreateForm";
 
 
 function NotePage() {

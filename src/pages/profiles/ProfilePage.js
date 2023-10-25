@@ -20,7 +20,7 @@ import appStyles from "../../App.module.css";
 import Note from "../notes/Note";
 import { fetchMoreData } from "../../utils/utils";
 import NoResults from "../../assets/empty.png";
-import { ProfileEditDropdown } from "../../components/MoreDropdown";
+// import { ProfileEditDropdown } from "../../components/MoreDropdown";
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);

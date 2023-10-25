@@ -6,7 +6,7 @@ import { axiosRes } from "../../api/axiosDefaults";
 
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import Avatar from "../../components/Avatar";
-import { MoreDropdown } from "../../components/MoreDropdown";
+// import { MoreDropdown } from "../../components/MoreDropdown";
 import ClipboardCopy from "../../utils/CopyTextBlock";
 import CodeBlock from "../../utils/CodeBlock"
 import styles from "../../styles/Note.module.css";
@@ -22,8 +22,7 @@ const Note = (props) => {
     profile_id,
     profile_image,
     comments_count,
-    // pins_count,
-    pin_id,
+    // pin_id,
     title,
     content,
     code,
