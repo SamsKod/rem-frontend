@@ -19,6 +19,8 @@ function App() {
               <NotesPage message="No Notes found. Adjust the search keyword." />
             )}
             />
+            <Route exact path="/login" render={() => <LoginForm />} />
+          <Route exact path="/signup" render={() => <SignUpForm />} />
             <Route render={() => <NotFound />}
             />
           </Switch>
