@@ -9,7 +9,6 @@ const NavBar = () => {
 
   return (
     <Navbar
-      expanded={expanded}
       className={`${styles.NavBar} navbar-dark`}
       expand="md"
       fixed="top"
