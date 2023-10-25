@@ -1,6 +1,8 @@
-import NavBar from "./components/NavBar";
 import Container from "react-bootstrap/Container";
 import { Route, Switch } from "react-router-dom";
+
+import NavBar from "./components/NavBar";
+import NotFound from "./components/NotFound";
 
 
 function App() {
