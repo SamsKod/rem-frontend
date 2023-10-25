@@ -2,15 +2,15 @@ import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
-import logo from "../assets/logo.png";
+
 import {
   useCurrentUser,
   useSetCurrentUser,
 } from "../contexts/CurrentUserContext";
-import Avatar from "./Avatar";
-
-import styles from "../styles/NavBar.module.css";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
+import Avatar from "./Avatar";
+import logo from "../assets/logo.png";
+import styles from "../styles/NavBar.module.css";
 
 
 
@@ -40,13 +40,13 @@ const NavBar = () => {
   );
   const loggedInIcons = (
     <>
-      <NavLink
+      {/*<NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
         to="/pins"
       >
         <i className="fa-solid fa-thumbtack"></i>Pins
-      </NavLink>
+      </NavLink>*/}
       <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
         <i className="fas fa-sign-out-alt"></i>Logout
       </NavLink>
