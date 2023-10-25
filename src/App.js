@@ -1,8 +1,18 @@
 import Container from "react-bootstrap/Container";
 import { Route, Switch } from "react-router-dom";
+import "./api/axiosDefaults";
 
 import NavBar from "./components/NavBar";
 import NotFound from "./components/NotFound";
+import { useCurrentUser } from "./contexts/CurrentUserContext";
+import ProfilePage from "./pages/profiles/ProfilePage";
+import SignUpForm from "./pages/auth/SignUpForm";
+import LoginForm from "./pages/auth/LoginForm";
+
+import NotePage from "./pages/notes/NotePage";
+import NotesPage from "./pages/notes/NotesPage";
+
+
 import styles from "./App.module.css";
 
 
