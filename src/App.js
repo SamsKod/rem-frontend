@@ -12,6 +12,13 @@ function App() {
       <NavBar />
         <Container>
           <Switch>
+             <Route
+            exact
+            path="/"
+            render={() => (
+              <NotesPage message="No Notes found. Adjust the search keyword." />
+            )}
+            />
             <Route render={() => <NotFound />}
             />
           </Switch>

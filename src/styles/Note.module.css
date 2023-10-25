@@ -1,0 +1,58 @@
+.Note {
+  color: #0D0208;
+  background-color: #F8F8F8;
+  border: 1px solid #C6C6C6;
+  border-radius: 2px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.Note figure,
+h5 {
+  margin: 0 0;
+}
+
+.Titlelink {
+  color:#003B00;
+}
+
+.Titlelink:hover {
+  color: #008F11;
+  text-decoration: none;
+}
+
+.Pin {
+  color: #003B00;
+}
+
+.Pin:hover {
+  color: #00FF41;
+}
+
+.IconOutline:hover {
+  color: #00FF41;
+}
+
+.ProfileLink {
+  color: #0D0208;
+}
+
+.ProfileLink:hover {
+  color: #008F11;
+  text-decoration: none;
+}
+
+.CodeBlock {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  text-align: left;
+  min-height: 50px;
+  max-height: 600px;
+  overflow: auto;
+}
+
+pre {
+  margin-bottom: 0rem !important;
+  padding: 0px !important;
+}
