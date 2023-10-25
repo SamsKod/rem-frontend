@@ -50,7 +50,7 @@ function NotesPage({ message, filter = "" }) {
   
   return (
     <Row className="h-100 w-100">
-      <Col className="mx-auto" lg={12}>
+      <Col className="m-auto" lg={12}>
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form
           className={styles.SearchBar}

@@ -1,23 +1,24 @@
+import NavBar from "./components/NavBar";
 import Container from "react-bootstrap/Container";
 import { Route, Switch } from "react-router-dom";
 import "./api/axiosDefaults";
 
-import NavBar from "./components/NavBar";
-import NotFound from "./components/NotFound";
-import { useCurrentUser } from "./contexts/CurrentUserContext";
-import ProfilePage from "./pages/profiles/ProfilePage";
-import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import SignUpForm from "./pages/auth/SignUpForm";
 import LoginForm from "./pages/auth/LoginForm";
-import UsernameForm from "./pages/profiles/UsernameForm";
-import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 
+import NotesCreateForm from "./pages/notes/NotesCreateForm";
 import NotePage from "./pages/notes/NotePage";
 import NotesPage from "./pages/notes/NotesPage";
-import NotesCreateForm from "./pages/notes/NotesCreateForm";
 import NotesEditForm from "./pages/notes/NotesEditForm";
 
+import { useCurrentUser } from "./contexts/CurrentUserContext";
+import ProfilePage from "./pages/profiles/ProfilePage";
+import UsernameForm from "./pages/profiles/UsernameForm";
+import UserPasswordForm from "./pages/profiles/UserPasswordForm";
+import ProfileEditForm from "./pages/profiles/ProfileEditForm";
+import NotFound from "./components/NotFound";
 import styles from "./App.module.css";
+
 
 
 function App() {
