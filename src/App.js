@@ -12,7 +12,7 @@ function App() {
       <NavBar />
         <Container>
           <Switch>
-             <Route
+            <Route
             exact
             path="/"
             render={() => (
@@ -20,7 +20,7 @@ function App() {
             )}
             />
             <Route exact path="/login" render={() => <LoginForm />} />
-          <Route exact path="/signup" render={() => <SignUpForm />} />
+            <Route exact path="/signup" render={() => <SignUpForm />} />
             <Route render={() => <NotFound />}
             />
           </Switch>
