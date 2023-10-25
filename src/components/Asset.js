@@ -4,7 +4,7 @@ import { Spinner } from "react-bootstrap";
 
 const Asset = ({ spinner, src, message }) => {
   return (
-    <div className={`${styles.Asset} p-4`}>
+    <div>
       {spinner && <Spinner 
           as="span"
           animation="grow"
