@@ -49,7 +49,7 @@ function NotePage() {
     <Row className="w-100 h-100">
       <Col className="mx-auto" lg={12}>
         <Note {...note.results[0]} setNotes={setNote} notePage />
-        <Container className={appStyles.Content}>
+        {/*<Container className={appStyles.Content}>
           {currentUser ? (
             <CommentCreateForm
               profile_id={currentUser.profile_id}
@@ -81,7 +81,7 @@ function NotePage() {
           ) : (
             <span>No comments... yet</span>
           )}
-        </Container>
+        </Container>*/}
       </Col>
     </Row>
   );

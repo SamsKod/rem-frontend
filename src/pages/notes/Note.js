@@ -71,39 +71,39 @@ const Note = (props) => {
     }
   };
 
-  const handlePin = async () => {
-    try {
-      const { data } = await axiosRes.post("/pins/", { note: id });
-      setNotes((prevNotes) => ({
-        ...prevNotes,
-        results: prevNotes.results.map((note) => {
-          return note.id === id
-            ? { ...note, pins_count: note.pins_count + 1, pin_id: data.id }
-            : note;
-        }),
-      }));
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  // const handlePin = async () => {
+  //   try {
+  //     const { data } = await axiosRes.post("/pins/", { note: id });
+  //     setNotes((prevNotes) => ({
+  //       ...prevNotes,
+  //       results: prevNotes.results.map((note) => {
+  //         return note.id === id
+  //           ? { ...note, pins_count: note.pins_count + 1, pin_id: data.id }
+  //           : note;
+  //       }),
+  //     }));
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
 
-  const handleUnpin = async () => {
-    try {
-      await axiosRes.delete(`/pins/${pin_id}/`);
-      setNotes((prevNotes) => ({
-        ...prevNotes,
-        results: prevNotes.results.map((note) => {
-          return note.id === id
-            ? { ...note, pins_count: note.pins_count - 1, pin_id: null }
-            : note;
-        }),
-      }));
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  // const handleUnpin = async () => {
+  //   try {
+  //     await axiosRes.delete(`/pins/${pin_id}/`);
+  //     setNotes((prevNotes) => ({
+  //       ...prevNotes,
+  //       results: prevNotes.results.map((note) => {
+  //         return note.id === id
+  //           ? { ...note, pins_count: note.pins_count - 1, pin_id: null }
+  //           : note;
+  //       }),
+  //     }));
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
 
-  console.log(pin_id)
+  // console.log(pin_id)
 
 
   return (
@@ -114,7 +114,7 @@ const Note = (props) => {
             <Avatar src={profile_image} height={55} />
             {owner}
           </Link>
-          <div className="font-weight-bold d-flex align-items-center">
+          {/*<div className="font-weight-bold d-flex align-items-center">
             <span>{updated_at}</span>
             {is_owner && notePage && (
               <MoreDropdown
@@ -122,7 +122,7 @@ const Note = (props) => {
                 handleDelete={handleDelete}
               />
             )}
-          </div>
+          </div>*/}
         </Media>
       </Card.Body>
       <Link className={styles.Titlelink} to={`/notes/${id}`}>
@@ -139,7 +139,7 @@ const Note = (props) => {
         </div>
 
         <div>
-          { pin_id ? (
+          {/*{ pin_id ? (
             <span onClick={handleUnpin}>
               <i className={`fa-solid fa-thumbtack ${styles.Pin}`} />
             </span>
@@ -154,7 +154,7 @@ const Note = (props) => {
             >
               <i className="fa-solid fa-thumbtack" />
             </OverlayTrigger>
-          )}
+          )}*/}
           {currentUser ? 
           <Link to={`/notes/${id}`}>  
             <i className={`fa-solid fa-comment ${styles.IconOutline}`} />
