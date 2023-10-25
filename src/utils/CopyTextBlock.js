@@ -34,7 +34,7 @@ function ClipboardCopy({ copyText }) {
 
   return (
     <div className={styles.Copytextblock}>
-      {/* Bind our handler function to the onClick button property */}
+       {/*Bind our handler function to the onClick button property */}
       <button className={styles.Copybutton} onClick={handleCopyClick}>
         <span>{isCopied ? 'Copied!' : 'Copy'}</span>
       </button>

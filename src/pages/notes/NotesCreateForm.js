@@ -25,7 +25,6 @@ const [errors, setErrors] = useState({});
   });
   const { title, content, code } = noteData;
 
-  // const imageInput = useRef(null);
   const history = useHistory();
 
   const handleChange = (event) => {

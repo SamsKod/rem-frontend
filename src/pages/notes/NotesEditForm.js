@@ -23,8 +23,8 @@ function NoteEditForm() {
   });
   const { title, content, code} = noteData;
 
-  // const imageInput = useRef(null);
   const history = useHistory();
+
   const { id } = useParams();
 
   useEffect(() => {
@@ -51,16 +51,6 @@ function NoteEditForm() {
     });
   };
 
-  // const handleChangeImage = (event) => {
-  //   if (event.target.files.length) {
-  //     URL.revokeObjectURL(image);
-  //     setPostData({
-  //       ...postData,
-  //       image: URL.createObjectURL(event.target.files[0]),
-  //     });
-  //   }
-  // };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -68,10 +58,6 @@ function NoteEditForm() {
     formData.append("title", title);
     formData.append("content", content);
     formData.append("code", code);
-
-    // if (imageInput?.current?.files[0]) {
-    //   formData.append("image", imageInput.current.files[0]);
-    // }
 
     try {
       await axiosReq.put(`/notes/${id}/`, formData);
@@ -111,12 +97,7 @@ function NoteEditForm() {
           onChange={handleChange}
         />
       </Form.Group>
-      {/*{errors?.content?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}*/}
-
+      
       <Form.Group>
         <Form.Label>Code</Form.Label>
         <Form.Control
@@ -127,11 +108,6 @@ function NoteEditForm() {
           onChange={handleChange}
         />
       </Form.Group>
-      {/*{errors?.code?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}*/}
 
       <button className={`${btnStyles.Button} ${btnStyles.Green}`} type="submit">
         save
@@ -148,14 +124,6 @@ function NoteEditForm() {
   return (
     <Form onSubmit={handleSubmit}>
       <Row>
-        {/*<Col className="m-auto" lg={12}>
-          <Container
-            className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
-          >
-
-            <div className="d-md-none">{textFields}</div>
-          </Container>
-        </Col>*/}
         <Col lg={12} className="m-auto">
           <Container className={appStyles.Content}>{textFields}</Container>
         </Col>

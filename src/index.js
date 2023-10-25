@@ -11,10 +11,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 ReactDOM.render(
 	<Router>
 		<CurrentUserProvider>
-    	<ProfileDataProvider>
+    		<ProfileDataProvider>
 				<App />
 			</ProfileDataProvider>
-    </CurrentUserProvider>	
+    	</CurrentUserProvider>	
 	</Router>,
 	document.getElementById("root")
 );

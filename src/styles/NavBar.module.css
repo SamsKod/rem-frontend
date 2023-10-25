@@ -14,13 +14,11 @@
 
 .NavLink:hover {
   color: #008F11;
-/*  transition: color ease-in-out 0.3s;*/
   text-decoration: none;
 }
 
 .NavLink:hover i {
   color:#008F11;
-/*  transition: color ease-in-out 0.3s;*/
 }
 
 .Active {
@@ -30,8 +28,6 @@
 .Active i {
   color: #00FF41;
 }
-
-/*.linkText{ color: white ; }*/
 
 .Logo {
   width: 50%;

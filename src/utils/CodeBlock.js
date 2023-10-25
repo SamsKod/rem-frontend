@@ -14,11 +14,9 @@ const CodeBlock: React.FC<{ codestring: string }> = ({ codestring }) => {
   }
 return (
   <SyntaxHighlighter
-    // language="javascript"
     style={a11yDark}
     showLineNumbers>
     {codeWithMinLines}
-     {/*{codestring}*/}
   </SyntaxHighlighter>
 );
 };

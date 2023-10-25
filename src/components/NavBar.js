@@ -40,13 +40,13 @@ const NavBar = () => {
   );
   const loggedInIcons = (
     <>
-      {/*<NavLink
+      <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
         to="/pins"
       >
         <i className="fa-solid fa-thumbtack"></i>Pins
-      </NavLink>*/}
+      </NavLink>
       <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
         <i className="fas fa-sign-out-alt"></i>Logout
       </NavLink>

@@ -6,7 +6,7 @@ import Container from "react-bootstrap/Container";
 
 import Asset from "../../components/Asset";
 
-// import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import {
@@ -20,20 +20,20 @@ import appStyles from "../../App.module.css";
 import Note from "../notes/Note";
 import { fetchMoreData } from "../../utils/utils";
 import NoResults from "../../assets/empty.png";
-// import { ProfileEditDropdown } from "../../components/MoreDropdown";
+import { ProfileEditDropdown } from "../../components/MoreDropdown";
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [profileNotes, setProfileNotes] = useState({ results: [] });
 
-  // const currentUser = useCurrentUser();
+  const currentUser = useCurrentUser();
   const { id } = useParams();
 
   const { setProfileData } = useSetProfileData();
   const { pageProfile } = useProfileData();
 
   const [profile] = pageProfile.results;
-  // const is_owner = currentUser?.username === profile?.owner;
+  const is_owner = currentUser?.username === profile?.owner;
 
 
   useEffect(() => {
@@ -59,7 +59,7 @@ function ProfilePage() {
 
   const mainProfile = (
     <>
-      {/*{profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}*/}
+      {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
       <Row noGutters className="px-3 text-center">
         <Col lg={3} className="text-lg-left">
           <Image

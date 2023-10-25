@@ -6,13 +6,10 @@ import { axiosRes } from "../../api/axiosDefaults";
 
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import Avatar from "../../components/Avatar";
-// import { MoreDropdown } from "../../components/MoreDropdown";
+import { MoreDropdown } from "../../components/MoreDropdown";
 import ClipboardCopy from "../../utils/CopyTextBlock";
 import CodeBlock from "../../utils/CodeBlock"
 import styles from "../../styles/Note.module.css";
-
-// import SyntaxHighlighter from 'react-syntax-highlighter';
-// import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
  
 const Note = (props) => {
@@ -22,7 +19,7 @@ const Note = (props) => {
     profile_id,
     profile_image,
     comments_count,
-    // pin_id,
+    pin_id,
     title,
     content,
     code,
@@ -35,28 +32,6 @@ const Note = (props) => {
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
 
-  console.log(props)
-
-  // const CodeBlock: React.FC<{ codestring: string }> = ({ codestring }) => {
-  //   let codeWithMinLines = codestring;
-  //   if (codestring) { 
-  //   const minLines = 2; // Adjust the minimum number of lines as needed
-
-  //   const codeLines = codestring.split('\n');
-  //   const emptyLines = new Array(Math.max(minLines - codeLines.length, 0)).fill('');
-
-  //   codeWithMinLines = codeLines.concat(emptyLines).join('\n');
-  //   }
-  // return (
-  //   <SyntaxHighlighter
-  //     // language="javascript"
-  //     style={a11yDark}
-  //     showLineNumbers>
-  //     {codeWithMinLines}
-  //      {/*{codestring}*/}
-  //   </SyntaxHighlighter>
-  // );
-  // };
 
   const handleEdit = () => {
     history.push(`/notes/${id}/edit`);
@@ -71,39 +46,38 @@ const Note = (props) => {
     }
   };
 
-  // const handlePin = async () => {
-  //   try {
-  //     const { data } = await axiosRes.post("/pins/", { note: id });
-  //     setNotes((prevNotes) => ({
-  //       ...prevNotes,
-  //       results: prevNotes.results.map((note) => {
-  //         return note.id === id
-  //           ? { ...note, pins_count: note.pins_count + 1, pin_id: data.id }
-  //           : note;
-  //       }),
-  //     }));
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
+  const handlePin = async () => {
+    try {
+      const { data } = await axiosRes.post("/pins/", { note: id });
+      setNotes((prevNotes) => ({
+        ...prevNotes,
+        results: prevNotes.results.map((note) => {
+          return note.id === id
+            ? { ...note, pins_count: note.pins_count + 1, pin_id: data.id }
+            : note;
+        }),
+      }));
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
-  // const handleUnpin = async () => {
-  //   try {
-  //     await axiosRes.delete(`/pins/${pin_id}/`);
-  //     setNotes((prevNotes) => ({
-  //       ...prevNotes,
-  //       results: prevNotes.results.map((note) => {
-  //         return note.id === id
-  //           ? { ...note, pins_count: note.pins_count - 1, pin_id: null }
-  //           : note;
-  //       }),
-  //     }));
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
+  const handleUnpin = async () => {
+    try {
+      await axiosRes.delete(`/pins/${pin_id}/`);
+      setNotes((prevNotes) => ({
+        ...prevNotes,
+        results: prevNotes.results.map((note) => {
+          return note.id === id
+            ? { ...note, pins_count: note.pins_count - 1, pin_id: null }
+            : note;
+        }),
+      }));
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
-  // console.log(pin_id)
 
 
   return (
@@ -114,7 +88,7 @@ const Note = (props) => {
             <Avatar src={profile_image} height={55} />
             {owner}
           </Link>
-          {/*<div className="font-weight-bold d-flex align-items-center">
+          <div className="font-weight-bold d-flex align-items-center">
             <span>{updated_at}</span>
             {is_owner && notePage && (
               <MoreDropdown
@@ -122,7 +96,7 @@ const Note = (props) => {
                 handleDelete={handleDelete}
               />
             )}
-          </div>*/}
+          </div>
         </Media>
       </Card.Body>
       <Link className={styles.Titlelink} to={`/notes/${id}`}>
@@ -139,7 +113,7 @@ const Note = (props) => {
         </div>
 
         <div>
-          {/*{ pin_id ? (
+          { pin_id ? (
             <span onClick={handleUnpin}>
               <i className={`fa-solid fa-thumbtack ${styles.Pin}`} />
             </span>
@@ -154,7 +128,7 @@ const Note = (props) => {
             >
               <i className="fa-solid fa-thumbtack" />
             </OverlayTrigger>
-          )}*/}
+          )}
           {currentUser ? 
           <Link to={`/notes/${id}`}>  
             <i className={`fa-solid fa-comment ${styles.IconOutline}`} />

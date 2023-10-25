@@ -2,8 +2,8 @@
   min-height: 343px;
 }
 
-/*.CodeBlock {
+.CodeBlock {
   text-align: left;
   height:150px;
   overflow-y: scroll;
-}*/
+}
