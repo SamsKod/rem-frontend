@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'Menlo Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Menlo Regular'), url('./assets/fonts/Menlo-Regular.woff') format('woff');
+    }
+
+.App {
+  font-family: "Menlo Regular", sans-serif;
+  background-color: #F8F8F8;
+  min-height: 100vh;
+}
+
+.Main {
+  padding-top: 103px;
+}
+
+.Content {
+  background-color: #F8F8F8;
+  padding: 10px;
+  border-radius: 2px;
+  border: 1px solid #C6C6C6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/*a {
+  transition: color ease-in-out 0.0s;
+}*/
+
+a:hover {
+  text-decoration: none;
+}
+
+a:hover i {
+  color: #008F11;
+/*  transition: color ease-in-out 0.3s;*/
+}
+
+i {
+  color: #C6C6C6;
+  font-size: 1.6rem;
+  padding: 7px;
+  vertical-align: middle;
+}
+
+i:hover {
+  cursor: pointer;
+/*  transition: color ease-in-out 0.6s;*/
+  color: #008F11;
+}
+
+figure {
+  text-align: center;
+  display: inline-block;
+}
+
+/* scrollbar */
+*::-webkit-scrollbar {
+  width: 5px;
+}
+*::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+*::-webkit-scrollbar-thumb {
+  background: #888;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

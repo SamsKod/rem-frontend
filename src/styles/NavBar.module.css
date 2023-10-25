@@ -1,0 +1,38 @@
+.NavBar {
+  background-image: url("../assets/images/navbar-background2.png");
+  background-repeat: repeat;
+  border: 1px solid #0D0208;
+}
+
+.NavBar.Brand {
+  color: whitesmoke;
+}
+.NavLink {
+  padding: 3px;
+  color: #F8F8F8;
+}
+
+.NavLink:hover {
+  color: #008F11;
+/*  transition: color ease-in-out 0.3s;*/
+  text-decoration: none;
+}
+
+.NavLink:hover i {
+  color:#008F11;
+/*  transition: color ease-in-out 0.3s;*/
+}
+
+.Active {
+  color: #00FF41;
+}
+
+.Active i {
+  color: #00FF41;
+}
+
+/*.linkText{ color: white ; }*/
+
+.Logo {
+  width: 50%;
+}
