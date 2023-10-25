@@ -94,7 +94,7 @@ function LoginForm() {
               </Alert>
             ))}
           </Form>
-          <a target="_blank" rel="noreferrer" href="https://icons8.com/icon/19293/code">Code</a> icon by <a target="_blank" rel="noreferrer" href="https://icons8.com">Icons8</a>
+          {/*<a target="_blank" rel="noreferrer" href="https://icons8.com/icon/19293/code">Code</a> icon by <a target="_blank" rel="noreferrer" href="https://icons8.com">Icons8</a>*/}
         </Container>
       </Col>
     </Row>
