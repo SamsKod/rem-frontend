@@ -26,8 +26,6 @@ const Comment = (props) => {
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
 
-  console.log(props)
-
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/comments/${id}/`);
