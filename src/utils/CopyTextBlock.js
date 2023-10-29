@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import styles from "../styles/CopyTextBlock.module.css";
-
-
 
 function ClipboardCopy({ copyText }) {
   const [isCopied, setIsCopied] = useState(false);
 
   // This is the function we wrote earlier
   async function copyTextToClipboard(text) {
-    if ('clipboard' in navigator) {
+    if ("clipboard" in navigator) {
       return await navigator.clipboard.writeText(text);
     } else {
-      return document.execCommand('copy', true, text);
+      return document.execCommand("copy", true, text);
     }
   }
 
@@ -29,17 +27,16 @@ function ClipboardCopy({ copyText }) {
       .catch((err) => {
         console.log(err);
       });
-  }
-
+  };
 
   return (
     <div className={styles.Copytextblock}>
-       {/*Bind our handler function to the onClick button property */}
+      {/*Bind our handler function to the onClick button property */}
       <button className={styles.Copybutton} onClick={handleCopyClick}>
-        <span>{isCopied ? 'Copied!' : 'Copy'}</span>
+        <span>{isCopied ? "Copied!" : "Copy"}</span>
       </button>
     </div>
   );
-};
+}
 
 export default ClipboardCopy;

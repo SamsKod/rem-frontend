@@ -1,21 +1,30 @@
 # rem-frontend
 
-***Deployment***
+REM is a responsive web application created for me and others to make notes about code snippets and other useful command strings. It's possible for anyone to create their own notes and also to pin their own or others' notes. I took inspiration from the movie 'Matrix' for the choice of the color scheme." The backend functionality is built on Django using Django REST Framework with a Postgres SQL database. The frontend is a React application that uses the React library Axios to connect with the Api. Issues in Github rem-frontend repository is used to handle what features to build and prioritise according to the MoSCoW method. 
 
+The live link for the frontend (Web application) can be found here - [https://rem-front-378d7413a299.herokuapp.com/](https://rem-front-378d7413a299.herokuapp.com/) </br>
+The live link for the backend (Web API) can be found here - [https://rem-backend-api-933e70f9f3d2.herokuapp.com/](https://rem-backend-api-933e70f9f3d2.herokuapp.com/) </br>
 
+![SiteImage](src/assets/images/Responsive.png)
 
+##Features:
 
-Update with this in axiosDefault.js:
-* axios.defaults.baseURL = "http://localhost:8000";
+**Responsive navigation bar:**
 
-# remember-backend
-The project Rem application is project for me to learn as much as I can about developing a modern web application. The backend functionality is built on Django using Django REST Framework with a Postgres SQL database. The frontend React application uses the React library Axios to connect with the Api. Issues in Github is used to handle what features to build and prioritise according to the MoSCoW method in structured way. The purpos for this application is to collect code snippets and other information that is good to reuse in some way when coding.
+![SiteImage](src/assets/images/Navbar.png)
 
-The live link for the frontend (Web application) can be found here - [https://remember-backend-ff8df02164f2.herokuapp.com/](https://remember-frontend-b9e629f40656.herokuapp.com/) </br>
-The live link for the backend (Web API) can be found here - [https://remember-backend-ff8df02164f2.herokuapp.com/
-](https://remember-backend-ff8df02164f2.herokuapp.com/) </br>
+**Landing page**
 
-Connect to https://remember-backend-ff8df02164f2.herokuapp.com/| Site should open with message "Welcome to my drf API!" 
+![SiteImage](src/assets/images/Homepage.png)
+
+**Note page**
+
+![SiteImage](src/assets/images/Note.png)
+
+**Sign up page**
+
+![SiteImage](src/assets/images/SignUp.png)
+
 
 ### Font:
 Menlo Regular Generated from: http://www.cufonfonts.com
@@ -37,61 +46,73 @@ div {
 </div>
 
 ### Color-scheme:
-![Color-scheme](src/assets/images/matrix-code-green.png)
+![Color-scheme](src/assets/images/matrix-code-green-sm.png)
 
 Color scheme:
 
 Dark| Dark green|Middle green|Bright green|Grey|White
 ----|-----------|------------|------------|----|-----
-(#0D0208)|(#003B00)|(#008F11)|(#00FF41)|(#C6C6C6)|(#F8F8F8) 
+(#0D0208)|(#003B00)|(#008F11)|(#00FF41)|(#C6C6C6)|(#F8F8F8)
+
+This makes it possible to use light green on parts with dark background and dark green on part with light background to get high contrasts on text and icons.
 
 ### Wireframes:
-![Color-scheme](src/assets/images/login.png)
-![Color-scheme](src/assets/images/note.png)
-![Color-scheme](src/assets/images/profile.png)
-
-### React Libries:
-Following libraries has been used:
-	-axios: "^0.21.4",
-    -bootstrap": "^4.6.0",
-    -react-bootstrap": "^1.6.3",
-    -react-highlight": "^0.15.0",
-    -react-infinite-scroll-component": "^6.1.0",
-    -react-router-dom": "^5.3.0",
-    -react-scripts": "^4.0.3",
-    -react-syntax-highlighter": "^15.5.0",
-
-# Reused objects
-    ### Api (Django)
-    * Permission.py
-    ### Frontend (React)
-    * NotesPage Component List View
-# Testing
+![Color-scheme](src/assets/images/wf_login.png)
+![Color-scheme](src/assets/images/wf_note.png)
+![Color-scheme](src/assets/images/wf_profile.png)
 
 
-Steps | Expected result | Actual Results | Pass / Fail
-------------- | ------------- | ------------- | -------------
-|||| As expected | Pass 
-Append uri /profiles | List profiles data | As expected| Pass
-Append uri /profiles/2| Fetch profile by id | As expected| Pass
-Append uri /profiles/66| Error message: "HTTP 404 Not Found" "detail": "Not found."  | As expected| Pass
-Login| Django REST framework login page should open | As expected| Pass
-Login as Sam| Form to update Sam's own profile should open | As expected| Pass
-Logout| Form to update Sam's own profile should not open | As expected| Pass
-Append uri /posts | List posts data | As expected| Pass
-Append uri /posts/2| Fetch post by id| As expected| Pass
-Append uri /comments| Fetch comments | As expected| Pass
+### Following libraries is used in react:
+
+* axios
+* bootstrap
+* react-bootstrap
+* react-highlight
+* react-infinite-scroll-component
+* react-router-dom
+* react-scripts
+* react-syntax-highlighter
 
 
-# Bugs
+### Reused objects in app: 
+* Note
+* CurrentUserContext
+* useRedirect
+* Asset
+* Avantar
+
+
+### Testing
+
+[Test_images](./assets/file/TestResultsImages.md)
+
+Example on test protocol:
+
+Steps | Expected result | Actual Results | Pass / Fail 
+----- | --------------- | -------------- | ----------- 
+Append  https://rem-front-378d7413a299.herokuapp.com | All notes is displayed | As expected | Pass
+Click on Login in navbar | Login form is displayed | As expected | Pass
+Login without username | Message: Must include username and password | As expected | Pass
+Login as Stina| 
+Click on username Stina in navigation bar | Form to update Stina's own profile should open | As expected | Pass
+Logout | Username Stina should not display in navigation bar | As expected | Pass
+Browser reload page | Username Stina should not display in navigation bar | Username Stina is displayed | Fail
+Login as Stina and click add notes | Open create note form | As expected | Pass
+Add title, description, code snippet and click create | A new note is displayed with highlighted code | As expected| Pass
+Click on Pin icon in note| Icon change from gray to green | As expected | Pass
+Click on Pins icon in navigation bar | A list of Stinas pinned notes should display | As expected | Pass
+
+
+# Bugs found so far
  * A CORS problem with wrong settings in config vars Heroku. -Fixed.
  * Profile name in navbar is not set to active color. -Not fixed.
+ * Different browsers handles coockies differently which might create authenticating problem. Not fixed
 
 
 # Deployment
 
-The REM app is deployed on Heroku cloud service from Github repository rem-front https://rem-front-378d7413a299.herokuapp.com/ . It is connected to an backend api https://rem-backend-api-933e70f9f3d2.herokuapp.com/
-A Postgres database on ElephantSQL cloud service is used and static files is handled by cloud service Cloudinary.
+The REM app is deployed on Heroku cloud service from Github repository rem-front https://rem-front-378d7413a299.herokuapp.com/ . It is connected to rem-backend-api https://rem-backend-api-933e70f9f3d2.herokuapp.com/
+Backend is build on Django deployed on Heroku, a Postgres database on ElephantSQL cloud service and media files is handled by cloud service Cloudinary.
 
 
 Steps to deploy:
@@ -103,12 +124,20 @@ Steps to deploy:
 
 Local:
 * Clone your forked repository to local pc.
-* In terminal go to app folder and run command "npm run".
+* Start rem-backend from Github repository https://github.com/SamsKod/rem-backend
+* Update with this in axiosDefault.js: axios.defaults.baseURL = "http://localhost:8000";
+* In terminal go to app folder and run command "npm start".
 
 
 # Credits
 Example code and design is used from:
-- 
+- Code Institute
+- icons8.com
+- Font Awesome
+- pluralsight.com
+- Logrocket.com
+- idownloadblog.com
+- cufonfonts.com
 
 # Media
 My photos.
