@@ -7,7 +7,7 @@ The live link for the backend (Web API) can be found here - [https://rem-backend
 
 ![SiteImage](src/assets/images/Responsive.png)
 
-##Features:
+## Features:
 
 **Responsive navigation bar:**
 
@@ -27,6 +27,7 @@ The live link for the backend (Web API) can be found here - [https://rem-backend
 
 
 ### Font:
+
 Menlo Regular Generated from: http://www.cufonfonts.com
 
 <style>
@@ -46,6 +47,7 @@ div {
 </div>
 
 ### Color-scheme:
+
 ![Color-scheme](src/assets/images/matrix-code-green-sm.png)
 
 Color scheme:
@@ -57,6 +59,7 @@ Dark| Dark green|Middle green|Bright green|Grey|White
 This makes it possible to use light green on parts with dark background and dark green on part with light background to get high contrasts on text and icons.
 
 ### Wireframes:
+
 ![Color-scheme](src/assets/images/wf_login.png)
 ![Color-scheme](src/assets/images/wf_note.png)
 ![Color-scheme](src/assets/images/wf_profile.png)
