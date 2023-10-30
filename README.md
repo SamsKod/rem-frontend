@@ -15,7 +15,7 @@ The live link for the backend (Web API) can be found here - [https://rem-backend
 
 **Landing page**
 
-![SiteImage](src/assets/images/Homepage.png)
+![SiteImage](src/assets/images/HomePage.png)
 
 **Note page**
 
@@ -74,7 +74,8 @@ This makes it possible to use light green on parts with dark background and dark
 * react-syntax-highlighter
 
 
-### Reused objects in app: 
+### Reused objects in app:
+
 * Note
 * CurrentUserContext
 * useRedirect
@@ -84,7 +85,7 @@ This makes it possible to use light green on parts with dark background and dark
 
 ### Testing
 
-[Test_images](./assets/file/TestResultsImages.md)
+[Test_images](src/assets/file/TestResultsImages.md)
 
 Example on test protocol:
 
