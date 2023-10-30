@@ -26,6 +26,12 @@ The live link for the backend (Web API) can be found here - [https://rem-backend
 ![SiteImage](src/assets/images/SignUp.png)
 
 
+
+## Design
+
+In the design work I took insperation from the the Matrix move and the style of font from how terminal windows looks like. I used the program Balsamiq Wireframes make the scetches of what the pages should be.
+Therfore I'm using the font Menlo Regular and the color scheme of different schades of green. My goal is to have good contrast between different objects, text and background and so forth. The app name REM associates with remark (comment out) and remember. 
+
 ### Font:
 
 Menlo Regular Generated from: http://www.cufonfonts.com
