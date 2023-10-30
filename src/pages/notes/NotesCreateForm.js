@@ -13,10 +13,8 @@ import styles from "../../styles/NotesCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
-
 function NoteCreateForm() {
-
-const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState({});
 
   const [noteData, setNoteData] = useState({
     title: "",
@@ -33,7 +31,6 @@ const [errors, setErrors] = useState({});
       [event.target.name]: event.target.value,
     });
   };
-
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -53,7 +50,6 @@ const [errors, setErrors] = useState({});
       }
     }
   };
-
 
   const textFields = (
     <div className="text-center">
@@ -80,9 +76,9 @@ const [errors, setErrors] = useState({});
           name="content"
           value={content}
           onChange={handleChange}
-        />    
+        />
       </Form.Group>
-       <Form.Group>
+      <Form.Group>
         <Form.Label>Code</Form.Label>
         <Form.Control
           as="textarea"
@@ -90,9 +86,12 @@ const [errors, setErrors] = useState({});
           name="code"
           value={code}
           onChange={handleChange}
-        />    
+        />
       </Form.Group>
-      <button className={`${btnStyles.Button} ${btnStyles.Green}`} type="submit">
+      <button
+        className={`${btnStyles.Button} ${btnStyles.Green}`}
+        type="submit"
+      >
         create
       </button>
       <button
@@ -111,9 +110,7 @@ const [errors, setErrors] = useState({});
           <Container
             className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
           >
-            <div>
-            {textFields}
-            </div>
+            <div>{textFields}</div>
           </Container>
         </Col>
       </Row>

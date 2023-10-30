@@ -17,7 +17,6 @@ import Note from "./Note";
 import Comment from "../comments/Comment";
 import CommentCreateForm from "../comments/CommentCreateForm";
 
-
 function NotePage() {
   const { id } = useParams();
   const [note, setNote] = useState({ results: [] });
@@ -25,8 +24,6 @@ function NotePage() {
   const currentUser = useCurrentUser();
   const profile_image = currentUser?.profile_image;
   const [comments, setComments] = useState({ results: [] });
-
-  
 
   useEffect(() => {
     const handleMount = async () => {

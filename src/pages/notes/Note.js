@@ -8,10 +8,9 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import Avatar from "../../components/Avatar";
 import { MoreDropdown } from "../../components/MoreDropdown";
 import ClipboardCopy from "../../utils/CopyTextBlock";
-import CodeBlock from "../../utils/CodeBlock"
+import CodeBlock from "../../utils/CodeBlock";
 import styles from "../../styles/Note.module.css";
 
- 
 const Note = (props) => {
   const {
     id,
@@ -31,7 +30,6 @@ const Note = (props) => {
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
-
 
   const handleEdit = () => {
     history.push(`/notes/${id}/edit`);
@@ -78,13 +76,14 @@ const Note = (props) => {
     }
   };
 
-
-
   return (
     <Card className={styles.Note}>
       <Card.Body>
         <Media className="align-items-center justify-content-between">
-          <Link className={`${styles.ProfileLink} font-weight-bold`} to={`/profiles/${profile_id}`}>
+          <Link
+            className={`${styles.ProfileLink} font-weight-bold`}
+            to={`/profiles/${profile_id}`}
+          >
             <Avatar src={profile_image} height={55} />
             {owner}
           </Link>
@@ -100,7 +99,9 @@ const Note = (props) => {
         </Media>
       </Card.Body>
       <Link className={styles.Titlelink} to={`/notes/${id}`}>
-        {title && <Card.Title className=" display-4 text-center">{title}</Card.Title>}
+        {title && (
+          <Card.Title className=" display-4 text-center">{title}</Card.Title>
+        )}
       </Link>
       <Card.Body>
         <h4 className="text-left">Description:</h4>
@@ -113,7 +114,7 @@ const Note = (props) => {
         </div>
 
         <div>
-          { pin_id ? (
+          {pin_id ? (
             <span onClick={handleUnpin}>
               <i className={`fa-solid fa-thumbtack ${styles.Pin}`} />
             </span>
@@ -129,19 +130,19 @@ const Note = (props) => {
               <i className="fa-solid fa-thumbtack" />
             </OverlayTrigger>
           )}
-          {currentUser ? 
-          <Link to={`/notes/${id}`}>  
-            <i className={`fa-solid fa-comment ${styles.IconOutline}`} />
-          </Link>
-            :
+          {currentUser ? (
+            <Link to={`/notes/${id}`}>
+              <i className={`fa-solid fa-comment ${styles.IconOutline}`} />
+            </Link>
+          ) : (
             <OverlayTrigger
               placement="top"
               overlay={<Tooltip>Log in to comment notes!</Tooltip>}
-            >            
-            <i className="fa-solid fa-comment" />
-            </OverlayTrigger> 
-            }
-         
+            >
+              <i className="fa-solid fa-comment" />
+            </OverlayTrigger>
+          )}
+
           {comments_count}
         </div>
       </Card.Body>

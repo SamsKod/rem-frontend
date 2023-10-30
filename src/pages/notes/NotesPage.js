@@ -18,7 +18,6 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import appStyles from "../../App.module.css";
 import styles from "../../styles/NotesPage.module.css";
 
-
 function NotesPage({ message, filter = "" }) {
   const currentUser = useCurrentUser();
   const [notes, setNotes] = useState({ results: [] });
@@ -47,7 +46,7 @@ function NotesPage({ message, filter = "" }) {
       clearTimeout(timer);
     };
   }, [filter, query, pathname, currentUser]);
-  
+
   return (
     <Row className="h-100 w-100">
       <Col className="m-auto" lg={12}>

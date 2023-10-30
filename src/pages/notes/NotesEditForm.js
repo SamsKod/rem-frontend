@@ -12,7 +12,6 @@ import { axiosReq } from "../../api/axiosDefaults";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
-
 function NoteEditForm() {
   const [errors, setErrors] = useState({});
 
@@ -21,7 +20,7 @@ function NoteEditForm() {
     content: "",
     code: "",
   });
-  const { title, content, code} = noteData;
+  const { title, content, code } = noteData;
 
   const history = useHistory();
 
@@ -33,9 +32,7 @@ function NoteEditForm() {
         const { data } = await axiosReq.get(`/notes/${id}/`);
         const { title, content, code, is_owner } = data;
 
-        is_owner
-          ? setNoteData({ title, content, code })
-          : history.push("/");
+        is_owner ? setNoteData({ title, content, code }) : history.push("/");
       } catch (err) {
         console.log(err);
       }
@@ -97,7 +94,7 @@ function NoteEditForm() {
           onChange={handleChange}
         />
       </Form.Group>
-      
+
       <Form.Group>
         <Form.Label>Code</Form.Label>
         <Form.Control
@@ -109,7 +106,10 @@ function NoteEditForm() {
         />
       </Form.Group>
 
-      <button className={`${btnStyles.Button} ${btnStyles.Green}`} type="submit">
+      <button
+        className={`${btnStyles.Button} ${btnStyles.Green}`}
+        type="submit"
+      >
         save
       </button>
       <button
